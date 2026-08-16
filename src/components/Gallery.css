@@ -1,0 +1,120 @@
+.gallery__strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x proximity;
+}
+
+.gallery__tile {
+  flex: 0 0 auto;
+  width: 240px;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  text-align: left;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease;
+}
+
+.gallery__tile:hover {
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__tile:hover {
+    transform: none;
+  }
+}
+
+.gallery__tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+  border-radius: var(--radius);
+}
+
+.gallery__tile span {
+  position: relative;
+  z-index: 1;
+}
+
+.tone-dusk {
+  background: linear-gradient(150deg, #1f3244, #a63a2e 140%);
+}
+.tone-forest {
+  background: linear-gradient(150deg, #14212c, #3f5d46 140%);
+}
+.tone-meadow {
+  background: linear-gradient(150deg, #2b4356, #c8932a 140%);
+}
+.tone-glacier {
+  background: linear-gradient(150deg, #14212c, #7fa8b3 140%);
+}
+
+.gallery__lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 16, 20, 0.88);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.gallery__lightbox-inner {
+  max-width: 560px;
+  width: 100%;
+  color: var(--paper);
+  text-align: center;
+}
+
+.gallery__lightbox-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  margin-bottom: 16px;
+}
+
+.gallery__close {
+  float: right;
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.gallery__lightbox-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.gallery__lightbox-nav button {
+  background: none;
+  border: 1px solid var(--line-light);
+  color: var(--paper);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.gallery__lightbox-nav button:hover {
+  border-color: var(--gold);
+}

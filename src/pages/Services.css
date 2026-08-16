@@ -1,0 +1,22 @@
+.services-grid .service-card {
+  padding: 30px;
+}
+
+.service-card__icon {
+  font-size: 30px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.6;
+}

@@ -1,0 +1,124 @@
+.trek-hero {
+  padding: 70px 0 100px;
+  color: var(--paper);
+}
+
+.trek-hero.tone-dusk {
+  background: linear-gradient(150deg, #1f3244, #a63a2e 150%);
+}
+.trek-hero.tone-forest {
+  background: linear-gradient(150deg, #14212c, #3f5d46 150%);
+}
+.trek-hero.tone-meadow {
+  background: linear-gradient(150deg, #2b4356, #c8932a 150%);
+}
+.trek-hero.tone-glacier {
+  background: linear-gradient(150deg, #14212c, #7fa8b3 150%);
+}
+
+.trek-hero__inner .eyebrow {
+  color: var(--gold-light);
+}
+.trek-hero__inner .eyebrow a:hover {
+  text-decoration: underline;
+}
+
+.trek-hero__title {
+  color: var(--paper);
+  margin: 12px 0 18px;
+  font-size: clamp(36px, 6vw, 72px);
+}
+
+.trek-detail__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .trek-detail__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trek-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 0 0 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 560px) {
+  .trek-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.trek-stats dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+
+.trek-stats dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.trek-detail__heading {
+  margin: 34px 0 14px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.trek-detail__desc {
+  max-width: none;
+}
+
+.highlight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.highlight-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.highlight-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.others__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.others__list a {
+  font-weight: 600;
+  color: var(--rust);
+}
+
+.trek-detail__aside {
+  position: sticky;
+  top: 100px;
+}

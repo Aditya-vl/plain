@@ -1,0 +1,40 @@
+.team-card {
+  padding: 30px;
+  text-align: left;
+}
+
+.team-card__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.team-card h3 {
+  font-size: 19px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.team-card__role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 6px 0 12px;
+}
+
+.team-card__bio {
+  color: var(--ink-3);
+  font-size: 14.5px;
+  line-height: 1.6;
+}

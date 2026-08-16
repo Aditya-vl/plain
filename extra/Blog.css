@@ -1,0 +1,5 @@
+/* Blog listing reuses .page-hero and .blog-card from index.css.
+   Nothing page-specific needed yet beyond spacing tweaks. */
+.blog-card {
+  height: 100%;
+}
