@@ -206,9 +206,10 @@ ul {
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--ink);
-  border-color: var(--gold);
+  background: #fabc4399;
+  color: var(--paper);
+  border-color: var(--line-light);
+  border-radius: 12px;
 }
 
 .btn-primary:hover {
@@ -216,13 +217,14 @@ ul {
 }
 
 .btn-outline {
-  background: transparent;
+  background: #fabc4399;
   color: var(--paper);
   border-color: var(--line-light);
+  border-radius: 12px;
 }
 
 .btn-outline:hover {
-  border-color: var(--paper);
+  border-color: var(--gold-light);
 }
 
 .btn-outline-dark {
@@ -326,6 +328,25 @@ ul {
   border-color: var(--line-light);
   color: var(--paper);
 }
+
+.field select {
+  color-scheme: light;
+}
+
+.on-dark .field select {
+  color-scheme: dark;
+}
+
+.field select option {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.on-dark .field select option {
+  background: var(--ink-2);
+  color: var(--paper);
+}
+
 
 .field input::placeholder,
 .field textarea::placeholder {
@@ -524,7 +545,9 @@ ul {
   color: var(--paper);
   margin: 10px 0;
 }
-
+.page-hero .lede {
+  color: var(--stone-2);
+}
 /* =========================== not-found block (shared) =========================== */
 .not-found {
   text-align: center;

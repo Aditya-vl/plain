@@ -6,9 +6,10 @@ const LINKS = [
   { to: "/", label: "Home" },
   { to: "/treks-tours", label: "Treks & Tours" },
   { to: "/services", label: "Services" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/our-team", label: "Our Team" },
-  { to: "/contact", label: "Contacts" },
-  // { to: "/blog", label: "Blog" },  
+  { to: "/contact", label: "Contacts" }, 
+
 ];
 
 export default function Header() {
@@ -36,15 +37,14 @@ export default function Header() {
             <path d="M6 46 L22 22 L30 34 L38 16 L58 46 Z" fill="var(--ink)" />
           </svg> */}
              <img
-               src="/mountain_vector.svg"
+               src="/logoo.jpeg"
                alt=""
                className="site-header__logo-icon"
                />
 
-          <span>
-            ADI KAILASH
-            <em>TOURS</em>
-          </span>
+          <span style={{ fontSize: "clamp(30px, 2vw, 18px)" }}>
+  ADI KAILASH TOURS
+</span>
         </NavLink>
 
         <nav className="site-header__nav" aria-label="Primary">
@@ -73,9 +73,7 @@ export default function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <a href="tel:+919458147907" className="site-header__phone">
-            +91 9458147907
-          </a>
+         
           <button
             className={`hamburger ${open ? "is-open" : ""}`}
             aria-expanded={open}
@@ -91,19 +89,26 @@ export default function Header() {
       </div>
 
       <nav id="mobile-nav" className={`mobile-nav ${open ? "is-open" : ""}`} aria-label="Mobile">
-        <ul>
-          {LINKS.map((l) => (
-            <li key={l.to}>
-              <NavLink to={l.to} className={({ isActive }) => (isActive ? "is-active" : "")}>
-                {l.label}
-              </NavLink>
-            </li>
-          ))}
-          <li>
-            <a href="tel:+919458147907">+91 9458147907</a>
-          </li>
-        </ul>
-      </nav>
+  <ul>
+    {LINKS.map((l) => (
+      <li key={l.to}>
+        <NavLink to={l.to} className={({ isActive }) => (isActive ? "is-active" : "")}>
+          {l.label}
+        </NavLink>
+      </li>
+    ))}
+    <li>
+      
+      <a  href="https://wa.me/919458147907?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20tours."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="blog-whatsapp-btn"
+      >
+        BOOK NOW
+      </a>
+    </li>
+  </ul>
+</nav>
     </header>
   );
 }

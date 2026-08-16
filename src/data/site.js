@@ -78,14 +78,16 @@ export const team = [
 ];
 
 export const galleryItems = [
-  { label: "Adi Kailash base camp", tone: "dusk" },
-  { label: "Responsible trekking in practice", tone: "forest" },
-  { label: "Family trip to Adi Kailash", tone: "meadow" },
-  { label: "Group at Om Parvat viewpoint", tone: "glacier" },
-  { label: "Parvati Kund", tone: "dusk" },
-  { label: "Trekker on the Kali valley trail", tone: "forest" },
-  { label: "Darma Valley, spring", tone: "meadow" },
-  { label: "Darma Valley, monsoon green", tone: "forest" },
-  { label: "Darma Valley, autumn light", tone: "glacier" },
-  { label: "Darma Valley, late season", tone: "dusk" },
+  { label: "Adi Kailash base camp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Afdcamp", tone: "dusk", image: "/gallery/mandir-1.jpeg" },
+  { label: "famp", tone: "dusk", image: "/gallery/ohm-parvat-1.jpeg" },
+  { label: "Afailash base camp", tone: "dusk", image: "/gallery/mountain-trishul-1.jpeg" },
+  { label: "Adi Kdase camp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Adi Kailde camp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Adi Kdamp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Addbase camp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Adi d base camp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Adi Kailash badmp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  { label: "Adi Kdbase camp", tone: "dusk", image: "/gallery/nandi-1.jpeg" },
+  
 ];

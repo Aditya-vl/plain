@@ -34,13 +34,15 @@ export default function Home() {
             <h1 className="h1">
               Explore &amp; Trek
               <br />
-              The Cold Desert
-              <br />
-              Of Himalayas
+              
+              In Himalayas
             </h1>
-            <p className="lede">
-              Let us craft your unforgettable journey from vast valley to border area designed by us.
-            </p>
+            <p
+  className="lede"
+  style={{ color: "#fefefd" }}
+>
+  Let us craft your unforgettable journey from vast valley to border area designed by us.
+</p>
             <div className="hero__cta">
               <Link to="/treks-tours" className="btn btn-primary">
                  Tours
@@ -53,11 +55,11 @@ export default function Home() {
             <dl className="hero__stats">
               <div>
                 <dt>Peaks &amp; passes</dt>
-                <dd>12+ routes</dd>
+                <dd>10+ routes</dd>
               </div>
               <div>
-                <dt>Rating on JustDial</dt>
-                <dd>5.0 &#9733;</dd>
+                <dt>Rated always high</dt>
+                <dd>Rated always high &#9733;</dd>
               </div>
               <div>
                 <dt>Base</dt>
@@ -136,7 +138,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head">
             <p className="eyebrow">Our  Adventures</p>
-            <h2 className="h2">Images from our expeditions</h2>
+            <h2 className="h2">Images from our explorations</h2>
           </div>
           <Gallery />
         </div>
@@ -206,7 +208,7 @@ export default function Home() {
         </div>
       </section>
       {/* ---------------- BLOG PREVIEW ---------------- */}
-      <section className="section">
+      {/* <section className="section">
         <div className="wrap">
           <div className="section-head">
             <p className="eyebrow">From The Blog</p>
@@ -231,7 +233,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

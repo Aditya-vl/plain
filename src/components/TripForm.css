@@ -7,9 +7,9 @@
 }
 
 .trip-form--light {
-  background: var(--paper);
-  border-color: var(--line);
-  box-shadow: none;
+  background: var(--stone-1.5);
+  border-color: var(--stone-3);
+  box-shadow: var(--shadow);
 }
 
 .trip-form--light form {

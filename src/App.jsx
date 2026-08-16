@@ -9,8 +9,8 @@ import TrekDetail from "./pages/TrekDetail.jsx";
 import Services from "./pages/Services.jsx";
 import Team from "./pages/Team.jsx";
 import Contact from "./pages/Contact.jsx";
-import Blog from "./pages/Blog.jsx";
-import BlogPost from "./pages/BlogPost.jsx";
+import GalleryPage from "./pages/Gallery.jsx";
+
 import Simple from "./pages/Simple.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -38,9 +38,8 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/our-team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route
+          <Route path="/gallery" element={<GalleryPage />} />
+        <Route
             path="/privacy-policy"
             element={<Simple title="Privacy Policy" text="We collect  the details like name, contact information and trip preferences in order to plan and follow up on your trip. We do not sell or share your information with third parties beyond the guides, drivers and homestay partners needed to run your trip." />}
           />

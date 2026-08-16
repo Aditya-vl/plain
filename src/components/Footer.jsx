@@ -24,10 +24,10 @@ export default function Footer() {
       <div className="wrap footer-newsletter">
         <div>
           <p className="eyebrow">Stay In The Loop</p>
-          <h3 className="h3">Subscribe for trip dates &amp; trail notes</h3>
+          {/* <h3 className="h3">Subscribe for trip dates &amp; trail notes</h3> */}
         </div>
         <form className="newsletter-form" onSubmit={onSubscribe} noValidate>
-          <input
+          {/* <input
             type="email"
             required
             placeholder="you@example.com"
@@ -37,15 +37,25 @@ export default function Footer() {
               setEmail(e.target.value);
               if (status !== "idle") setStatus("idle");
             }}
-          />
-          <button className="btn btn-primary" type="submit" disabled={status === "loading"}>
-            {status === "loading" ? "Sending\u2026" : "Subscribe"}
-          </button>
+          /> */}
+          <button
+  className="btn btn-primary"
+  type="button"
+  onClick={() => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfj41Z806KtEeFJHyLNZsXq28k4HGo0xc6U_3Xfo58W_Q0lVw/viewform",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }}
+>
+  TOUR INQUIRY  
+</button>
         </form>
       </div>
       {status === "success" && (
         <div className="wrap">
-          <p className="form-note form-note--ok">You're subscribed \u2014 welcome aboard.</p>
+          {/* <p className="form-note form-note--ok">You're subscribed \u2014 welcome aboard.</p> */}
         </div>
       )}
       {status === "error" && (
@@ -72,9 +82,9 @@ export default function Footer() {
         <div>
           <p className="eyebrow">Our Services</p>
           <ul>
-            <li>Taxi &amp; Transport Services</li>
-            <li>Accommodation Booking</li>
             <li>Permit Assistance</li>
+            <li>Accommodation Booking</li>
+            <li>Taxi &amp; Transport Services</li>
             <li>Customised Itineraries</li>
             <li>Local Guides</li>
           </ul>
@@ -90,6 +100,9 @@ export default function Footer() {
             <li>
               <a href="tel:+919458147907">+91 9458147907</a>
             </li>
+            <li>
+              <a href="tel:+919997653710">+91 9997653710</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -102,12 +115,12 @@ export default function Footer() {
           <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X / Twitter">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 4l7 9-7 7h2l6-6 5 6h4l-8-9.5L21 4h-2l-5.5 5.5L9 4H4z"/></svg>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/adikailashtours?igsh=MXF4NWg1eG5uM210Mg%3D%3D&igsi=MXF4NWg1eG5uM210Mg%3D%3D&utm_source=qr" target="_blank" rel="noreferrer" aria-label="Instagram">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor"/></svg>
           </a>
         </div>
         <p>
-          &copy; {new Date().getFullYear()} Pithoragarh Backpackers &middot; <Link to="/contact">Contact us</Link> &middot;{" "}
+          &copy; {new Date().getFullYear()} Adi Kailash Tours &middot; <Link to="/contact">Contact us</Link> &middot;{" "}
           <Link to="/privacy-policy">Privacy policy</Link> &middot; <Link to="/terms">Terms &amp; Conditions</Link>
         </p>
       </div>

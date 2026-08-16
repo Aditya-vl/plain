@@ -12,10 +12,15 @@ export default function Gallery() {
           <button
             key={item.label}
             role="listitem"
-            className={`gallery__tile tone-${item.tone}`}
+            className="gallery__tile"
             onClick={() => setActive(i)}
             aria-label={`Open image: ${item.label}`}
           >
+            {item.image ? (
+              <img src={item.image} alt={item.label} loading="lazy" />
+            ) : (
+              <div className={`gallery__fallback tone-${item.tone}`} />
+            )}
             <span>{item.label}</span>
           </button>
         ))}
@@ -27,7 +32,11 @@ export default function Gallery() {
             <button className="gallery__close" onClick={() => setActive(null)} aria-label="Close image">
               &times;
             </button>
-            <div className={`gallery__lightbox-media tone-${galleryItems[active].tone}`} />
+            {galleryItems[active].image ? (
+              <img className="gallery__lightbox-media" src={galleryItems[active].image} alt={galleryItems[active].label} />
+            ) : (
+              <div className={`gallery__lightbox-media tone-${galleryItems[active].tone}`} />
+            )}
             <p>{galleryItems[active].label}</p>
             <div className="gallery__lightbox-nav">
               <button

@@ -11,8 +11,8 @@
   box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
 } */
 .site-header__logo-icon {
-  width: 60px;
-  height: 50px;
+  width: 70px;
+  height: 60px;
   object-fit: contain;
   display: block;
 }
@@ -160,9 +160,10 @@
     transition: max-height 0.3s ease;
   }
   .mobile-nav.is-open {
-    max-height: 400px;
-    border-top: 1px solid var(--line-light);
-  }
+  max-height: 80vh;
+  overflow-y: auto;
+  border-top: 1px solid var(--line-light);
+}
   .mobile-nav ul {
     padding: 10px clamp(20px, 5vw, 48px) 20px;
   }
@@ -176,7 +177,16 @@
     color: var(--stone-2);
     border-bottom: 1px solid var(--line-light);
   }
-  .mobile-nav a.is-active {
+ 
+  .mobile-nav a.blog-whatsapp-btn {
+  display: inline-block;
+  margin-top: 8px;
+  text-align: center;
+  border: 1px solid var(--gold);
+  color: var(--ink) !important;
+}
+     
+   .mobile-nav a.is-active {
     color: var(--gold-light);
   }
 }

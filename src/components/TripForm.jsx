@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { treks } from "../data/treks.js";
+import { WEB3FORMS_ACCESS_KEY } from "../config.js";
 import "./TripForm.css";
 
 const EMPTY = {
@@ -17,6 +18,7 @@ const EMPTY = {
 export default function TripForm({ variant = "compact", theme = "dark", title, subtitle }) {
   const [values, setValues] = useState(EMPTY);
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("");
   const isFull = variant === "full";
 
   const update = (key) => (e) => {
@@ -25,25 +27,54 @@ export default function TripForm({ variant = "compact", theme = "dark", title, s
     if (status !== "idle") setStatus("idle");
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!values.name.trim() || !values.email.trim() || !values.phone.trim() || !values.accept) {
       setStatus("error");
+      setErrorMsg("Please fill in your name, email, phone number and accept the policy before sending.");
       return;
     }
+
     setStatus("loading");
-    window.setTimeout(() => {
-      setStatus("success");
-      setValues(EMPTY);
-    }, 900);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New trip enquiry — ${values.destination || "Pithoragarh Backpackers"}`,
+          from_name: " Adi kailash Tours ",
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          destination: values.destination,
+          number_of_tourists: values.tourists,
+          travelling_from: values.travellingFrom,
+          desired_dates: values.dates,
+          message: values.message,
+        }),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        setValues(EMPTY);
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong sending your message. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Couldn't reach the server. Check your connection and try again.");
+    }
   };
 
   return (
     <div className={`trip-form trip-form--${theme}`}>
       {(title || subtitle) && (
         <div className="trip-form__head">
-          {title && <h3 className="h3">{title}</h3>}
-          {subtitle && <p className="lede">{subtitle}</p>}
+          {title && <h3 className="h3" style={{ color: "#fff" }}>{title}</h3>}
+          {subtitle && <p className="lede" style={{ color: "#fff" }}>{subtitle}</p>}
         </div>
       )}
 
@@ -88,7 +119,7 @@ export default function TripForm({ variant = "compact", theme = "dark", title, s
             <div className="field-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
               <div className="field">
                 <label htmlFor="full-dates">Desired Dates</label>
-                <input id="full-dates" type="text" value={values.dates} onChange={update("dates")} placeholder="e.g. 12\u201318 Oct 2026" />
+                <input id="full-dates" type="text" value={values.dates} onChange={update("dates")} placeholder="e.g. 12–18 Oct 2026" />
               </div>
               <div className="field">
                 <label htmlFor="full-from">Travelling From</label>
@@ -108,17 +139,17 @@ export default function TripForm({ variant = "compact", theme = "dark", title, s
         </label>
 
         <button className="btn btn-primary btn-block" type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Sending\u2026" : "Send"}
+          {status === "loading" ? "Sending…" : "Send"}
         </button>
 
         {status === "success" && (
           <p className="form-note form-note--ok" role="status">
-            Congratulations \u2014 your message has been sent successfully.
+            Congratulations — your message has been sent successfully.
           </p>
         )}
         {status === "error" && (
           <p className="form-note form-note--err" role="alert">
-            Please fill in your name, email, phone number and accept the policy before sending.
+            {errorMsg}
           </p>
         )}
       </form>
